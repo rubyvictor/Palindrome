@@ -32,7 +32,8 @@ class ViewController: UIViewController {
         words.forEach { (word) in
             
             if isPalindrome(word: word) {
-                counts[word] = 1 // parse key into counts and set value to 1
+                let count = counts[word] ?? 0
+                counts[word] = count + 1 // parse key into counts and set value to 1
                 print("Found palindrome:", word)
             }
         }
