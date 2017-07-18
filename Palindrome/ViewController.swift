@@ -20,10 +20,14 @@ class ViewController: UIViewController {
         // ["civic": 1, "madam": 1, "kayak": 1, "anna": 2, "racecar": 1]
         
         allPalindromesCount(sentence: sentence)
+        
     }
 
-    func allPalindromesCount(sentence: String) {
+    func allPalindromesCount(sentence: String) -> [String: Int] {
         print(sentence)
+        
+        var counts = [String: Int]()
+        
         let words = sentence.components(separatedBy: " ")
         words.forEach { (word) in
             
@@ -31,7 +35,8 @@ class ViewController: UIViewController {
                 print("Found palindrome:", word)
             }
         }
-
+        print("Counts:", counts)
+        return counts
         }
     
     
