@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     fileprivate func isPalindrome(word: String) -> Bool {
         
-        let characters = Array(word)
+        let characters = Array(word.lowercased())
         var currentIndex = 0
         
         while currentIndex < characters.count / 2 {
