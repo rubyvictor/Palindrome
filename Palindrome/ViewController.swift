@@ -27,10 +27,17 @@ class ViewController: UIViewController {
         let words = sentence.components(separatedBy: " ")
         
         words.forEach { (word) in
-            print(word)
+            if isPalindrome(word: word) {
+                print("Found palindrome:", word)
+            }
         }
-    }
+
+        }
     
+    
+    fileprivate func isPalindrome(word: String) -> Bool {
+        return true
+    }
     
 
 }
