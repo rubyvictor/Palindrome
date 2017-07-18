@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let sentence = "madam anna kayak notapalindrom anna civic racecar"
+        let sentence = "madam anna kayak notapalindrom anna Civic racecar"
         
         
         // Implement a function that will tell us for each palindrome, how many times it occurs.  For example:
@@ -25,8 +25,8 @@ class ViewController: UIViewController {
     func allPalindromesCount(sentence: String) {
         print(sentence)
         let words = sentence.components(separatedBy: " ")
-        
         words.forEach { (word) in
+            
             if isPalindrome(word: word) {
                 print("Found palindrome:", word)
             }
@@ -36,6 +36,17 @@ class ViewController: UIViewController {
     
     
     fileprivate func isPalindrome(word: String) -> Bool {
+//        var characters = [String]()
+//        characters.append(word)
+        let characters: Array = [word]
+        var currentIndex = 0
+        
+        while currentIndex < characters.count / 2 {
+            if characters[currentIndex] != characters[characters.count - 1 - currentIndex] {
+                return false
+            }
+            currentIndex += 1
+        }
         return true
     }
     
